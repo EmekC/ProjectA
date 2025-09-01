@@ -11,7 +11,7 @@ import com.utsman.osmandcompose.rememberCameraState
 import org.osmdroid.util.GeoPoint
 
 @Composable
-fun MapScreen(navController: NavController) {
+fun MapScreen(navController: NavController, test: String?) {
     val cameraState = rememberCameraState {
         geoPoint = GeoPoint(31.6105, 34.7723)
         zoom = 18.0

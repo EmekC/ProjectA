@@ -27,12 +27,13 @@ fun SetupNavigation() {
     ) {
         // create the NavGraph and pass all destinations
 
+        // Map Screen
         composable<MapRoute> { backStackEntry ->
             val mapRoute: MapRoute = backStackEntry.toRoute()
-            // call Screen composable and pass mapRoute.test
-            MapScreen(navController)
+            MapScreen(navController, test = mapRoute.test)
         }
 
+        // List Screen
         composable<ListRoute> {
             Text("List Route")
             Button(onClick = {

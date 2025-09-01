@@ -9,6 +9,10 @@ plugins {
     id("com.google.dagger.hilt.android") version "2.56.2"
     // Kotlin serialization plugin for type safe routes and navigation arguments
     kotlin("plugin.serialization") version "2.0.21"
+    // Kotlin Secrets
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
+    // Firebase
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -46,6 +50,12 @@ android {
 
     buildFeatures {
         compose = true
+        buildConfig = true
+    }
+
+    secrets {
+        propertiesFileName = "secrets.properties"
+        defaultPropertiesFileName = "local.defaults.properties"
     }
 }
 
@@ -75,6 +85,10 @@ dependencies {
     implementation(libs.osmdroid.android)
     // This library dependencies
     implementation(libs.osm.android.compose)
+
+    // Firebase
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
