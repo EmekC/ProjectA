@@ -71,15 +71,9 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.navigation.dynamic.features.fragment)
 
-    // Maps
-//    implementation(libs.maps.compose)
-//    // Optionally, you can include the Compose utils library for Clustering,
-//    // Street View metadata checks, etc.
-//    implementation(libs.maps.compose.utils)
-//    // Optionally, you can include the widgets library for ScaleBar, etc.
-//    //noinspection UseTomlInstead
-//    implementation(libs.maps.compose.widgets)
-//
+    // Location
+    implementation(libs.play.services.location)
+
     // OpenStreetMap
     // origin version of osm android. You may be able to customize the version.
     implementation(libs.osmdroid.android)

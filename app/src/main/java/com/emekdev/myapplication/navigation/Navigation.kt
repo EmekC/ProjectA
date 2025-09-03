@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
+import com.emekdev.myapplication.screens.listscreen.ListScreen
 import com.emekdev.myapplication.screens.mapscreen.MapScreen
 import kotlinx.serialization.Serializable
 
@@ -35,10 +36,7 @@ fun SetupNavigation() {
 
         // List Screen
         composable<ListRoute> {
-            Text("List Route")
-            Button(onClick = {
-                navController.popBackStack()
-            }) {}
+            ListScreen(navController)
         }
     }
 }
